@@ -86,7 +86,8 @@ const setCountDown = (time, roundC) => {
         gameFields.forEach((field) => {
             if (field.style.left == "calc(-42.5vw)") {
                 field.style.transition = "none";
-                field.style.left = "100vw";
+                field.style.left = `${(numFields - 1) * 50}vw`;
+                //field.style.left = "100vw"; // issue with more than three elements / game fields
             }
             setTimeout(() => { 
                 field.style.transition = "1s linear all";
