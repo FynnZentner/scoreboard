@@ -44,8 +44,13 @@ const timeDifference = (startTime, endTime) => { // calculate it server side
 }
 
 const sortTeams = (obj) => {
-  let len = Object.keys(obj).length;
-  let sorted = Object.keys(obj).map((key) => ({Tname: key, points: obj[key].points, wins: obj[key].wins})); // filter out "Kein Team"
+  let objectKeys = Object.keys(obj);
+  let len = objectKeys.length / 2;
+  let sorted = [];
+  for(let i = 0; i < len; i++) { // Object.keys(obj).map((key) => ({Tname: key, points: obj[key].points, wins: obj[key].wins}))
+    let key = objectKeys[i];
+    sorted.push({Tname: key, points: obj[key].points, wins: obj[key].wins})
+  }
   
   for(let i = 0; i < len; i++) {
     for(let k = 0; k < (len-1-i); k++) {
