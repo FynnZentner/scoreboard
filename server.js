@@ -211,9 +211,8 @@ io.on('connection', (socket) => {
 
       io.emit('masterFeedback', JSON.stringify({type: "stateBtn", info: "Beenden"}));
     } else {
-      IS_PLAYING = "";
       io.emit('startEndCRound', JSON.stringify({startGame: false, teams: CURRENT_OPPONENTS}));
-      CURRENT_OPPONENTS = [];
+      // CURRENT_OPPONENTS = [], IS_PLAYING = "";
       io.emit('masterFeedback', JSON.stringify({type: "stateBtn", info: "Starten"}));
       // end game
     }
@@ -237,7 +236,6 @@ io.on('connection', (socket) => {
     if (data.device === "display") {
       CURRENT_OPPONENTS.forEach((opp) => {
         determineWinners(opp).forEach((winner) => {
-          console.log(winner) // complications. Too many wins sometimes – some data is possibly not reset
           TEAMS[winner].wins += 1;
         })
       })
