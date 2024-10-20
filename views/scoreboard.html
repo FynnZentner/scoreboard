@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/scoreboard.css">
+    <title>Scoreboard</title>
+</head>
+<body>
+    <div class="waitScreen">
+        <p class="eventTitle">...</p>
+
+        <div class="winnerTable">
+            <div class="winnerEl">
+                <p class="place">1.</p>
+                <p class="name_info"></p>
+            </div>
+            <div class="winnerEl">
+                <p class="place">2.</p>
+                <p class="name_info"></p>
+            </div>
+            <div class="winnerEl">
+                <p class="place">3.</p>
+                <p class="name_info"></p>
+            </div>
+        </div>
+        
+        <div class="roundSum">
+            <template class="template_roundSum">
+                <div class="element">
+                    <div class="subEl">
+                        <p class="team sum_it">...</p>
+                        <p class="points sum_it">...</p>
+                    </div>
+                    <p class="vs sum_it">vs.</p>
+                    <div class="subEl">
+                        <p class="points sum_it">...</p>
+                        <p class="team sum_it">...</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <div class="header">
+        <p class="title">Volleyballturnier</p>
+
+        <div class="time">
+            <p class="digit">0</p>
+            <p class="digit">0</p>
+            <p class="colon">:</p>
+            <p class="digit">0</p>
+            <p class="digit">0</p>
+        </div>
+
+        <p class="round">Runde 0</p>
+    </div>
+
+    <div class="container">
+        <template class="template_gameInfo">
+            <div class="gameInfo">
+                <div class="team_1 teamWrap">
+                    <p class="field">Feld</p>
+                    <p class="name_team_1 name_team">...</p>
+                    <p class="points_team_1 points_team">0</p>
+                </div>
+                <div class="vs_container">
+                    <p class="vs">vs.</p>
+                </div>
+                <div class="team_2 teamWrap">
+                    <p class="field">Feld</p>
+                    <p class="name_team_2 name_team">...</p>
+                    <p class="points_team_2 points_team">0</p>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script/scoreboard.js"></script>
+</body>
+</html>

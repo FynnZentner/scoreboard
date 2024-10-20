@@ -1,0 +1,241 @@
+:root {
+    --cornerRadius: 6px;
+    --colorOne: rgb(16,16,16);
+    --colorTwo: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Agdasima;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--colorOne);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    width: 90vw;
+    height: 18vh;
+    background-color: var(--colorTwo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2vh;
+    border-radius: var(--cornerRadius);
+    margin-bottom: 6vh;
+    position: relative;
+}
+
+.time {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: calc(4 * 8vh + 3rem);
+} /* width 6vh */
+
+.digit {
+    width: 8vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10vh;
+    background-color: var(--colorOne);
+    border-radius: var(--cornerRadius);
+    color: var(--colorTwo);
+}
+
+.colon {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1200;
+    font-size: 2rem;
+}
+
+.container {
+    width: 100vw;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+}
+
+.gameInfo {
+    width: 42.5vw;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.vs_container {
+    color: var(--colorTwo);
+    border-left: 8px solid var(--colorTwo);
+    border-right: 8px solid var(--colorTwo);
+    padding: 2vh 0;
+    width: calc(100% - 2 * 8px);
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vs {
+    font-size: 8rem;
+    transform: translateY(-1rem);
+}
+
+.teamWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    height: 25vh;
+    background-color: var(--colorTwo);
+}
+
+.teamWrap:first-of-type {
+    border-radius: var(--cornerRadius) var(--cornerRadius) 0 0;
+}
+
+.teamWrap:last-of-type {
+    border-radius: 0 0 var(--cornerRadius) var(--cornerRadius);
+}
+
+.points_team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 6rem;
+    color: var(--colorTwo);
+    background-color: var(--colorOne);
+    width: 25%;
+    height: 20vh;
+    border-radius: var(--cornerRadius);
+    right: 2vw;
+}
+
+.name_team {
+    position: absolute;
+    font-size: 2.8rem;
+    left: 2vw;
+    width: calc(42.5vw - 4vw - 25% - 2vw);
+}
+
+.field {
+    position: absolute;
+    font-size: 2.4rem;
+    color: var(--colorOne);
+    opacity: 0.6;
+    left: 2vw;
+    top: 2.5vh;
+}
+
+.round {
+    position: absolute;
+    right: 2vw;
+    font-size: 4rem;
+}
+
+.title {
+    position: absolute;
+    left: 2vw;
+    font-size: 4rem;
+}
+
+.waitScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000000000;
+    background-color: var(--colorOne);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.eventTitle {
+    color: var(--colorTwo);
+    font-size: 4rem;
+}
+
+.roundSum {
+    margin-top: 4vh;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.element {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.sum_it {
+    color: var(--colorTwo);
+    font-size: 2rem;
+}
+
+.vs {
+    font-size: 2rem;
+    transform: translateY(1px);
+}
+
+.subEl {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.winnerTable {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    flex-direction: column;
+}
+
+.winnerEl {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.place, .name_info{
+    font-size: 2rem;
+    color: var(--colorTwo);
+}

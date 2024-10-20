@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Agdasima;
+}
+
+body {
+    background-color: rgb(16,16,16);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 3rem;
+    width: 70%;
+    margin-top: 2vh;
+    color: white;
+}
+
+.container {
+    margin-top: 4vh;
+    width: 70%;
+    min-height: 20vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.gameField {
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 4vh;
+    border-radius: 10px;
+    position: relative;
+}
+
+.field_title {
+    font-size: 2rem;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.selectionWrap {
+    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.selectTeam {
+    width: 40%;
+    appearance: none;
+    background-color: rgb(16,16,16);
+    outline: none;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.vs {
+    font-size: 2rem;
+}
+
+.wrapBtns {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 5vh;
+    margin-top: 8vh;
+}
+
+.btn {
+    width: 48%;
+    cursor: pointer;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

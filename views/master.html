@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/master.css">
+    <title>Master</title>
+</head>
+<body>
+    <p class="header">Spiel-Einstellungen</p>
+    <div class="container">
+
+        <template class="fieldTemp">
+
+            <div class="gameField">
+                <p class="field_title">...</p>
+                <div class="selectionWrap">
+                    <select class="selectTeam">
+                        <option disabled selected hidden>Wähle ein Team</option>
+                    </select>
+                    <p class="vs">vs.</p>
+                    <select class="selectTeam">
+                        <option disabled selected hidden>Wähle ein Team</option>
+                    </select>
+                </div>
+            </div>
+
+        </template>
+
+    </div>
+
+    <div class="wrapBtns">
+        <p class="start_end btn" onclick="start_end_round()">Runde Starten</p>
+        <p class="results btn" onclick="show_Results()">Ergebnisse</p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script/master.js"></script>
+</body>
+</html>

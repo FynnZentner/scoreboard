@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/masterSettings.css">
+    <title>Game Master</title>
+</head>
+<body>
+    <p class="header">Spiel-Einstellungen</p>
+    <div class="container">
+        <div class="setting">
+            <p class="category">Titel des Events:</p>
+            <input class="input event" type="text" placeholder="Volleyballturnier">
+        </div>
+        <div class="setting">
+            <p class="category">Team-Namen:</p>
+            <input class="input name" type="text" placeholder="Schüler 1; Leher 2; ..." oninput="count(this)">
+            <p class="hint">*Team-Namen müssen mit einem Semicolon (';') getrennt werden.</p>
+        </div>
+        <div class="setting">
+            <p class="category">Anzahl der Spielfelder:</p>
+            <input class="input fields" type="number" min="1" max="10" placeholder="6">
+        </div>
+        <div class="setting">
+            <p class="category">Anzahl der Runden:</p>
+            <input class="input rounds" type="number" min="1" max="100" placeholder="10">
+        </div>
+        <div class="setting">
+            <p class="category">Spielzeit pro Runde:</p>
+            <input class="input time" type="time">
+        </div>
+
+        <div class="start" onclick="save()">Speichern</div>
+    </div>
+
+    <script src="/script/masterSettings.js"></script>
+</body>
+</html>

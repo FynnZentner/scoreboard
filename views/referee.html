@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/referee.css">
+    <title>Referee</title>
+</head>
+<body>
+    <div class="waitScreen">
+        <div class="fieldSelectScreen">
+            <select class="selectField" oninput="removeSelection(this)">
+                <option disabled selected hidden>Wähle ein Spielfeld aus um fortzufahren...</option>
+            </select>
+        </div>
+        <p class="eventTitle">...</p>
+    </div>
+
+    <div class="time">
+        <p class="digit">0</p>
+        <p class="digit">0</p>
+        <p class="colon">:</p>
+        <p class="digit">0</p>
+        <p class="digit">0</p>
+    </div>
+    <p class="field">Spielfeld X</p>
+
+    <div class="container">
+        <div class="teamC">
+            <div class="name_points">
+                <p class="teamN tp_info">...</p>
+                <p class="points tp_info">0 Pkt.</p>
+            </div>
+            <p class="teamBtn" onclick="add_sub_points(this)">+</p>
+            <p class="teamBtn" onclick="add_sub_points(this)">-</p>
+        </div>
+        <div class="teamC">
+            <div class="name_points">
+                <p class="teamN tp_info">...</p>
+                <p class="points tp_info">0 Pkt.</p>
+            </div>
+            <p class="teamBtn" onclick="add_sub_points(this)">+</p>
+            <p class="teamBtn" onclick="add_sub_points(this)">-</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script/referee.js"></script>
+</body>
+</html>
