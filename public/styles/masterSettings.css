@@ -79,7 +79,8 @@ body {
 
 .time {
     display: flex;
-    width: fit-content;
+    width: 4rem;
+    text-align: center;
     padding: .4rem 0.6rem;
 }
 
