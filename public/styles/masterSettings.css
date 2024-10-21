@@ -64,6 +64,7 @@ body {
     background-color: black;
     color: white;
     padding: 0.4rem;
+    transition: 0.3s ease-in-out all;
 }
 
 .input::-webkit-outer-spin-button,
@@ -105,3 +106,11 @@ body {
     left: 1rem;
     bottom: 0.3rem;
 }
+
+.input:invalid {
+    background-color: rgb(86, 26, 26);
+}
+
+/*.setting:has(> .input:invalid) {
+    background-color: rgb(255, 139, 139);
+}*/
