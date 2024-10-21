@@ -79,8 +79,6 @@ const setCountDown = (time) => {
         cacheTime["seconds"] -= 1;
     
         if ((cacheTime["minutes"] == 0 && cacheTime["seconds"] == 0) || END_ROUND) {
-            console.log(cacheTime)
-            console.log(END_ROUND)
             END_ROUND = false;
             waitScreen.style.display = "flex";
             document.querySelector(".field").textContent = `Spielfeld ${FIELD}`;
