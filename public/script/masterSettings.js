@@ -1,13 +1,23 @@
 const inputs = document.querySelectorAll(".input");
 const hint = document.querySelector(".hint");
 
+const validateInputs = () => {
+    for(inp of inputs) {
+        console.log(inp.value)
+        if(inp.value == "") return false;
+    }
+    if(inputs[1].value.split(";").length <= 1) return false;
+    if(!(/^([0-5][0-9]):([0-5][0-9])$/).test(inputs[4].value)) return false;
+    return true;
+}
+
 const save = () => {
     
-    const agree = confirm("Wird das Spiel gespeichert, können keine weiteren Änderungen mehr vorgenommen werden.");
+    const agree = confirm("Werden die Spieleinstellungen gespeichert, können keine weiteren Änderungen mehr vorgenommen werden.");
+
+    if(!validateInputs()) return alert("Alle Felder müssen korrekt ausgefüllt sein.");
     
-    if (!agree) {
-        return 0;
-    }
+    if (!agree) return 0;
 
     const savedData = {};
 
@@ -44,7 +54,7 @@ const count = (e) => {
         let teamCount = (/[a-zA-Z]/).test(valueArr[valueLength-1]) ? valueLength : valueLength-1;
         hint.textContent = teamCount > 1 ? `${teamCount} Teams` : `${teamCount} Team`;
     } else {
-        hint.textContent = "*Team-Namen müssen mit einem Semicolon (';') getrennt werden.";
+        hint.textContent = "Team-Namen müssen mit einem Semicolon ';' getrennt werden.";
     }
     
 }
