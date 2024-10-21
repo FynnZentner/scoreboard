@@ -9,6 +9,35 @@
     <title>Master</title>
 </head>
 <body>
+    <div class="containerManage">
+        <p class="titleManage">Spieldaten</p>
+        <p class="closeBtn" onclick="closeManage()">Schließen</p>
+        <div class="wrapEntriesSt">
+        <template class="tempTeamSt">
+            <div class="TeamSt">
+                <p class="teamNameSt">...</p>
+                <div class="wrapPointsWins">
+                    <p class="labelData">Punkte:</p>
+                    <div class="addSubWrap" id="pointWrap">
+                        <p class="subBtn adjBtn" onclick="changePointsWins(this)" id="subP">-</p>
+                        <input type="number" min="0" max="1000" class="teamPointsSt inpPW" oninput="changePointsWins(this)">
+                        <p class="addBtn adjBtn" onclick="changePointsWins(this)" id="addP">+</p>
+                    </div>
+                </div>
+                <div class="wrapPointsWins">
+                    <p class="labelData">Gewonnen:</p>
+                    <div class="addSubWrap" id="winWrap">
+                        <p class="subBtn adjBtn" onclick="changePointsWins(this)" id="subP">-</p>
+                        <input type="number" min="0" max="1000" class="teamWinsSt inpPW" oninput="changePointsWins(this)">
+                        <p class="addBtn adjBtn" onclick="changePointsWins(this)" id="addP">+</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+        </div>
+        <p class="savePointsWins" onclick="saveData()">Speichern</p>
+    </div>
+
     <p class="header">Spiel-Einstellungen</p>
     <div class="container">
 
@@ -18,11 +47,11 @@
                 <p class="field_title">...</p>
                 <div class="selectionWrap">
                     <select class="selectTeam">
-                        <option disabled selected hidden>Wähle ein Team</option>
+                        <option disabled selected hidden value="N/A">Wähle ein Team</option>
                     </select>
                     <p class="vs">vs.</p>
                     <select class="selectTeam">
-                        <option disabled selected hidden>Wähle ein Team</option>
+                        <option disabled selected hidden value="N/A">Wähle ein Team</option>
                     </select>
                 </div>
             </div>
@@ -35,6 +64,8 @@
         <p class="start_end btn" onclick="start_end_round()">Runde Starten</p>
         <p class="results btn" onclick="show_Results()">Ergebnisse</p>
     </div>
+
+    <p class="manageDataBtn" onclick="getData()">Daten Verwalten</p>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/script/master.js"></script>
