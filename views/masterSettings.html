@@ -9,7 +9,7 @@
     <title>Game Master</title>
 </head>
 <body>
-    <p class="header">Spiel-Einstellungen</p>
+    <p class="header">Spieleinstellungen</p>
     <div class="container">
         <div class="setting">
             <p class="category">Titel des Events:</p>
@@ -18,7 +18,7 @@
         <div class="setting">
             <p class="category">Team-Namen:</p>
             <input class="input name" type="text" placeholder="Schüler 1; Leher 2; ..." oninput="count(this)">
-            <p class="hint">*Team-Namen müssen mit einem Semicolon (';') getrennt werden.</p>
+            <p class="hint">Team-Namen müssen mit einem Semicolon ';' getrennt werden.</p>
         </div>
         <div class="setting">
             <p class="category">Anzahl der Spielfelder:</p>
@@ -26,11 +26,11 @@
         </div>
         <div class="setting">
             <p class="category">Anzahl der Runden:</p>
-            <input class="input rounds" type="number" min="1" max="100" placeholder="10">
+            <input class="input rounds" type="number" min="1" max="100" placeholder="10" pattern="^(\d+)$">
         </div>
         <div class="setting">
             <p class="category">Spielzeit pro Runde:</p>
-            <input class="input time" type="time">
+            <input class="input time" type="text" placeholder="HH:SS" pattern="^([0-9]{1,3}):([0-5][0-9]):([0-5][0-9])$">
         </div>
 
         <div class="start" onclick="save()">Speichern</div>
