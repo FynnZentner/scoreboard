@@ -186,6 +186,29 @@ server.post("/getGameData", (req, res) => {
   }
 })
 
+// changing points and wins through the master
+
+server.post("/requestGameData", (req,res) => {
+  try {
+    console.log(`Data requested at ${req.body.reqDate}`);
+    res.json(TEAMS);
+  } catch(err) {
+    console.error(err);
+    res.send(err);
+  }
+})
+
+server.post("/overrideGameData", (req, res) => {
+  try {
+    console.log(`Override requested at ${req.body.reqDate}`);
+    TEAMS = req.body.teams_updated;
+    res.json({state: "success"});
+  } catch(err) {
+    console.log(err);
+    res.send(err);
+  }
+})
+
 // init socket
 const io = require('socket.io')(app, {
   cors: {
@@ -247,11 +270,6 @@ io.on('connection', (socket) => {
       console.log(TEAMS)
       IS_PLAYING = "";
       CURRENT_OPPONENTS = [];
-    } else if (data.device === "referee") {
-      console.log(data)
-      /*data.winners.forEach((winner) => {
-        TEAMS[winner].wins += 1;
-      })*/
     }
   })
 
