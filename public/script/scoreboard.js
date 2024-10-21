@@ -83,6 +83,8 @@ const setCountDown = (time, roundC) => {
 
         // move game elements
 
+        let numFields = gameFields.length;
+
         gameFields.forEach((field) => {
             if (field.style.left == "calc(-42.5vw)") {
                 field.style.transition = "none";
@@ -126,11 +128,15 @@ const socket = io();
 
 socket.on("startEndCRound", (data) => {
     data = JSON.parse(data);
+    console.log(data)
+    //document.querySelectorAll(".element").forEach((el) => el.remove());
     if (!data.startGame) {
         if (waitScreen.style.opacity == 0) {
+            //document.querySelectorAll(".element").forEach((el) => el.remove());
             END_ROUND = true;
         } 
         if (data.from !== "referee") {
+            document.querySelectorAll(".element").forEach((el) => el.remove());
             data.teams.forEach((team) => {
                 let team_names = Object.keys(team);
                 createSumEl(
@@ -181,7 +187,7 @@ socket.on("gameResults", (data) => {
         let bestThree = data.sortedPlayer.slice(-3);
         winnerEntries.forEach((entry,idx) => {
             let cTeam = bestThree[2-idx];
-            entry.textContent = `${cTeam.Tname} | ${cTeam.wins} Gew. & ${cTeam.points} Pkt.`;
+            entry.textContent = cTeam.Tname; // `${cTeam.Tname} | ${cTeam.wins} Gew. & ${cTeam.points} Pkt.`;
         })
     }
 })
