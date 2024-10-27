@@ -111,7 +111,7 @@ server.get('/referee', validate_user, (req, res) => {
 server.post("/validatePassword", (req,res) => {
   try {
     let data = req.body;
-    if (process.env.ACCESS_PASSWORD === data.password) {
+    if (process.env.ACCESS_PASSWORD === data.password) { // A2025sGRj
       USER_IS_VALID = true;
       res.json({success: true, destination: data.destination});
     } else {
